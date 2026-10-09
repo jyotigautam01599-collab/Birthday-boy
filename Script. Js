@@ -1,0 +1,46 @@
+let currentSlideIndex = 1;
+const totalSlides = 4;
+
+function showSlide(index) {
+    document.querySelectorAll('.slide').forEach(slide => {
+        slide.classList.remove('active');
+    });
+
+    let targetSlide;
+    if (typeof index === 'number') {
+        targetSlide = document.getElementById(`slide-${index.toString().replace('.', '-')}`);
+    } else {
+        targetSlide = document.getElementById(`slide-${index}`);
+    }
+
+    if (targetSlide) {
+        targetSlide.classList.add('active');
+    }
+}
+
+function nextSlide(slideNumber) {
+    showSlide(slideNumber);
+}
+
+function nextSlideAuto() {
+    if (currentSlideIndex < totalSlides) {
+        currentSlideIndex++;
+        showSlide(currentSlideIndex);
+    }
+}
+
+function prevSlide() {
+    if (currentSlideIndex > 1) {
+        currentSlideIndex--;
+        showSlide(currentSlideIndex);
+    }
+}
+
+function blowCandles() {
+    const status = document.getElementById('candle-status');
+    status.innerText = "Yay! Happy Birthdayyy! 🎉";
+}
+
+function openGift(giftType) {
+    showSlide(`gift-${giftType}`);
+}
