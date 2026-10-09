@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background-color: #dbeafe;
+    background-image: radial-gradient(#93c5fd 2px, transparent 2px);
+    background-size: 30px 30px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    width: 90%;
+    max-width: 800px;
+    height: 500px;
+    position: relative;
+}
+
+.slide {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.slide.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+h1, h2 {
+    color: #1e3a8a;
+    margin-bottom: 20px;
+}
+
+.photo-frame {
+    border: 8px solid white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    position: relative;
+    background: white;
+}
+
+.photo-frame img {
+    width: 220px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.badge {
+    position: absolute;
+    top: -15px;
+    right: -15px;
+    background: #3b82f6;
+    color: white;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.cake {
+    font-size: 80px;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.cake:hover {
+    transform: scale(1.1);
+}
+
+.gifts-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.gift-card {
+    background: white;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.gift-card .icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5px;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #1d4ed8;
+}
+
+.nav-controls {
+    position: absolute;
+    bottom: 20px;
+}
+
+.letter-box, .scrapbook-page {
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 500px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
