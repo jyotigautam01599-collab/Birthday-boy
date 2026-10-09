@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday!</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="bg-overlay"></div>
+
+    <div class="container">
+
+        <!-- Slide 1: Welcome / Photo Slide -->
+        <section class="slide active" id="slide-1">
+            <div class="photo-frame">
+                <img src="https://via.placeholder.com/250x300" alt="Birthday Boy">
+                <span class="badge">BOY</span>
+            </div>
+            <h1 class="glow-text">HAPPY BIRTHDAY</h1>
+        </section>
+
+        <!-- Slide 2: Blow Candles -->
+        <section class="slide" id="slide-2">
+            <h2>Blow out the Candles !!!</h2>
+            <div class="cake-container" onclick="blowCandles()">
+                <div class="cake">🎂</div>
+                <p id="candle-status">Click on the cake to blow out candles!</p>
+            </div>
+        </section>
+
+        <!-- Slide 3: Accept Gifts Prompt -->
+        <section class="slide" id="slide-3">
+            <div class="cute-cat">🐱</div>
+            <h2>Accept your gifts?</h2>
+            <div class="btn-group">
+                <button onclick="nextSlide(4)">YES</button>
+                <button onclick="nextSlide('3-5')">NO</button>
+            </div>
+        </section>
+
+        <!-- Slide 3.5: Try Again Popup -->
+        <section class="slide" id="slide-3-5">
+            <div class="cute-cat">😿</div>
+            <h2>Please try again</h2>
+            <button onclick="nextSlide(3)">OKAY</button>
+        </section>
+
+        <!-- Slide 4: Choose Your Gift -->
+        <section class="slide" id="slide-4">
+            <h2>Yay! Choose your gift</h2>
+            <div class="gifts-grid">
+                <div class="gift-card" onclick="openGift('letter')">
+                    <div class="icon">✉️</div>
+                    <button>Gift 1</button>
+                </div>
+                <div class="gift-card" onclick="openGift('flowers')">
+                    <div class="icon">💐</div>
+                    <button>Gift 2</button>
+                </div>
+                <div class="gift-card" onclick="openGift('scrapbook')">
+                    <div class="icon">🎁</div>
+                    <button>Gift 3</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gift 1: Letter View -->
+        <section class="slide" id="gift-letter">
+            <div class="letter-box">
+                <h3>My Dearest Birthday Boy,</h3>
+                <p>I’m writing this to remind you of how special you are. Thank you for always being there for me, for your strength, warmth, and laughter...</p>
+                <p>Happy Birthday!</p>
+            </div>
+            <button class="back-btn" onclick="nextSlide(4)">Back to Gifts</button>
+        </section>
+
+        <!-- Gift 2: Flowers View -->
+        <section class="slide" id="gift-flowers">
+            <h2>Some Flowers for you!! 💐</h2>
+            <div class="photo-filmstrip">
+                <img src="https://via.placeholder.com/150" alt="Memory 1">
+                <img src="https://via.placeholder.com/150" alt="Memory 2">
+            </div>
+            <button class="back-btn" onclick="nextSlide(4)">Back to Gifts</button>
+        </section>
+
+        <!-- Gift 3: Scrapbook View -->
+        <section class="slide" id="gift-scrapbook">
+            <div class="scrapbook-page">
+                <div class="sticker">Birthday Boy 🎈</div>
+                <p>Wishing you the happiest year ahead full of love and adventures!</p>
+            </div>
+            <button class="back-btn" onclick="nextSlide(4)">Back to Gifts</button>
+        </section>
+
+    </div>
+
+    <!-- Navigation Controls -->
+    <div class="nav-controls">
+        <button id="prevBtn" onclick="prevSlide()">Prev</button>
+        <button id="nextBtn" onclick="nextSlideAuto()">Next</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
